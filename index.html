@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+
+        function send()
+        {
+            $.ajax({
+                url: "rest_api.php",
+                type: $("#method").val(),
+                data: {
+                    "api_key": $("#api_key").val(),
+                    "token": $("#token").val(),
+                    "view": $("#view").val(),
+                    "timestamp": $("#timestamp").val(),
+                    "version": "v1",
+                    "data": $("#data").val()
+                },
+                dataType: "json",
+                success: function (data, status, xhr) {
+                    var json = xhr.responseJSON;
+                }
+            });
+        }
+
+        var timer = setInterval(function(){
+            var ts = String(new Date().getTime());
+            $("#timestamp").val(ts.substr(0,10));
+        }, 100);
+
+    </script>
+</head>
+<body>
+    <select name="method" id="method">
+        <option>GET</option>
+        <option>POST</option>
+        <option>PUT</option>
+        <option>PATCH</option>
+        <option>DELETE</option>
+        <option>OPTIONS</option>
+    </select>
+    <br/>
+    <input type="text" name="api_key" id="api_key" value="123test321" /><br/>
+    <input type="text" name="token" id="token" value="keysecrettimestamp" /><br/>
+    <input type="text" name="view" id="view" value="Example" /><br/>
+    <input type="text" name="timestamp" id="timestamp" value="" onfocus="clearInterval(timer);" /><br/>
+    <textarea type="text" id="data" name="data"></textarea>
+    <br/>
+    <input type="button" onclick="send();" value="Senden" />
+</body>
+</html>
