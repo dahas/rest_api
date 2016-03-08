@@ -5,12 +5,15 @@ Objectoriented Pattern to create a RESTful Webservice.
 Run test.php on a LAMP/WAMP-Stack. Edit the $requestMethod parameter in test.php to simulate different behaviour. 
 
 ## Expanding the Webservice
-To extend or modify a Service navigate to "php_rest/views/". In this directory you place one folder for each available resource you like to provide. Name a folder corresponding to the resource. Inside a sub-folder that represents a version you create the Class. Give the Class and its file a name which must be the same as the folder that you´ve created first inside "views" followed by "View".
+To extend or modify a Service navigate to "php_rest/views/". In this directory you put one folder for each resource you like to provide. Name a folder corresponding to that resource. Inside a sub-folder that represents a version you create the required Class. Give that Class and its file a name that is the same as the folder that you´ve created first inside "views" but followed by "View".
 ````
 php_rest/
   ...
   views/
-    YourModule/
+    Example/
       v1/
-        YourModuleView.php
+        ExampleView.php
+    YourNewModule/
+      v1/
+        YourNewModuleView.php
 ````
