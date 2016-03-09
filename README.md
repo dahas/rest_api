@@ -1,5 +1,5 @@
 # rest_api
-Objectoriented Pattern to create a RESTful Webservice.
+Object oriented Pattern to create a RESTful Webservice.
 
 ## Usage
 Run test.php on a LAMP/WAMP-Stack. Edit the $requestMethod parameter in test.php to simulate different behaviour. 
