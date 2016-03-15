@@ -35,7 +35,7 @@ class ExampleView implements ViewIF
             return null;
         }
 
-        if (!in_array($_SERVER["REQUEST_METHOD"], $this->allowedRequestMethods)) {
+        if (!in_array($request->getMethod(), $this->allowedRequestMethods)) {
             $this->response->setStatus(405); // Method Not Allowed
             return null;
         }
