@@ -17,3 +17,5 @@ php_rest/
       v1/
         YourNewModuleView.php
 ````
+## Publisher
+Martin Wolf
